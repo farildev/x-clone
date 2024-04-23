@@ -1,17 +1,16 @@
-import Sidebar from "@/components/Sidebar"
+import Sidebar from "./sidebar";
+import Rightbar from "./rightbar";
 import { Outlet } from "react-router-dom"
 
 const HomeLayout = () => {
   return (
-    <div className="flex items-center max-w-[1260px] w-full mx-auto">
+    <div className="flex items-center max-w-[1265px] w-full mx-auto">
       <Sidebar />
-      <main className="h-screen flex flex-1">
-        <main className="w-[600px] py-4 px-2">
+      <main className="flex-1 flex gap-[30px]">
+        <main className="max-w-[600px] flex-1 border-x">
           <Outlet />
         </main>
-        <div className="flex-1 py-4 px-2">
-          Right Sidebar
-        </div>
+        <Rightbar />
       </main>
     </div>  
   )
